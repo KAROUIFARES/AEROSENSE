@@ -1,0 +1,177 @@
+;Proteus Design Interchange Format
+
+(PDIF
+  (vendor "Labcenter Electronics")
+  (version 1 0)
+  (library
+    (part "MT3608"
+      (family "ANA")
+      (package "SOT95P280X1456N")
+      (description "High_Efficiency_1.2MHz_2A_Step_Up_Converter")
+      (attribute "PKG_TYPE" "SOT95P280X1456N")
+      (attribute "MF" "Aerosemi_Technology_Co.,_Ltd")
+      (attribute "MAXIMUM_PACKAGE_HEIGHT" "1.45mm")
+      (attribute "PACKAGE" "Package")
+      (attribute "PRICE" "None")
+      (attribute "CHECK_PRICES" "https://www.snapeda.com/parts/MT3608/Aerosemi+Technology+Co.%252C+Ltd/view-part/?ref=eda")
+      (attribute "STANDARD" "IPC-7351B")
+      (attribute "PARTREV" "1.0")
+      (attribute "SNAPEDA_LINK" "https://www.snapeda.com/parts/MT3608/Aerosemi+Technology+Co.%252C+Ltd/view-part/?ref=snap")
+      (attribute "MP" "MT3608")
+      (attribute "AVAILABILITY" "Not_in_stock")
+      (attribute "MANUFACTURER" "Aero_Semi")
+      (gate
+        (swap 1)
+        (symbol "MT3608")
+        (pin "EN" 4 (type IP))
+        (pin "FB" 3 (type IP))
+        (pin "GND" 2 (type PP))
+        (pin "IN" 5 (type IP))
+        (pin "SW" 1 (type OP))
+      )
+    )
+    (symbol "MT3608"
+      (units THOU)
+      (graphic
+        (stroke 1)
+        (path (pt -400 300) (pt 400 300) (pt 400 -300) (pt -400 -300) (pt -400 300) (closed))
+      )
+      (terminal
+        (body (symbol "PIN_R0_U_L200") (pt -600.0 0.0) (rot 0) (mir 0) (visible true))
+        (name (pt 239.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R180_U_L200") (pt 600.0 100.0) (rot 0) (mir 0) (visible true))
+        (name (pt -239.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R180_U_L200") (pt 600.0 -200.0) (rot 0) (mir 0) (visible true))
+        (name (pt -239.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R0_U_L200") (pt -600.0 200.0) (rot 0) (mir 0) (visible true))
+        (name (pt 239.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R180_U_L200") (pt 600.0 200.0) (rot 0) (mir 0) (visible true))
+        (name (pt -239.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+      )
+    )
+    (symbol "PIN_R0_U_L200"
+      (units THOU)
+      (graphic
+        (stroke 6.5)
+        (path (pt 0.0 0.0) (pt 200.0 0.0))
+      )
+    )
+    (symbol "PIN_R180_U_L200"
+      (units THOU)
+      (graphic
+        (stroke 6.5)
+        (path (pt 0.0 0.0) (pt -200.0 0.0))
+      )
+    )
+    (package "SOT95P280X1456N"
+      (units THOU)
+      (layer TSLK
+        (graphic
+          (stroke 5.0)
+          (path (pt -33.46 61.61) (pt 33.46 61.61))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 33.46 -61.61) (pt -33.46 -61.61))
+        )
+        (graphic
+          (stroke 7.87)
+          (circle (pt -94.69 37.4) (pt -86.81 37.4))
+        )
+      )
+      (layer TASM
+        (graphic
+          (stroke 5.0)
+          (path (pt -33.46 -59.06) (pt -33.46 59.06))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 33.46 59.06) (pt 33.46 -59.06))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -33.46 59.06) (pt 33.46 59.06))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 33.46 -59.06) (pt -33.46 -59.06))
+        )
+        (graphic
+          (stroke 7.87)
+          (circle (pt -94.69 37.4) (pt -86.81 37.4))
+        )
+      )
+      (layer OCCA
+        (graphic
+          (stroke 1.97)
+          (path (pt -82.87 -68.9) (pt -82.87 68.9))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt -82.87 68.9) (pt 82.87 68.9))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt 82.87 68.9) (pt 82.87 -68.9))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt 82.87 -68.9) (pt -82.87 -68.9))
+        )
+      )
+      (leg 4 (pt 46.06 -37.4) (padstack 1))
+      (leg 3 (pt -46.06 -37.4) (padstack 2))
+      (leg 2 (pt -46.06 0) (padstack 3))
+      (leg 5 (pt 46.06 0) (padstack 4))
+      (leg 1 (pt -46.06 37.4) (padstack 5))
+      (leg 6 (pt 46.06 37.4) (padstack 6))
+      (padstack 1
+        (pad (layer TCOP) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TRES) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TPST) (rectf 23.23 53.94 0 5.81 0))
+      )
+      (padstack 2
+        (pad (layer TCOP) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TRES) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TPST) (rectf 23.23 53.94 0 5.81 0))
+      )
+      (padstack 3
+        (pad (layer TCOP) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TRES) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TPST) (rectf 23.23 53.94 0 5.81 0))
+      )
+      (padstack 4
+        (pad (layer TCOP) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TRES) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TPST) (rectf 23.23 53.94 0 5.81 0))
+      )
+      (padstack 5
+        (pad (layer TCOP) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TRES) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TPST) (rectf 23.23 53.94 0 5.81 0))
+      )
+      (padstack 6
+        (pad (layer TCOP) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TRES) (rectf 23.23 53.94 0 5.81 0))
+        (pad (layer TPST) (rectf 23.23 53.94 0 5.81 0))
+      )
+      (model MT3608.step
+        (euler 0 0 0)
+        (offset 0 0 0)
+      )
+    )
+  )
+)

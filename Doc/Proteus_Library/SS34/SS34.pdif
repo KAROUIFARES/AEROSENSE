@@ -1,0 +1,197 @@
+;Proteus Design Interchange Format
+
+(PDIF
+  (vendor "Labcenter Electronics")
+  (version 1 0)
+  (library
+    (part "SS34"
+      (family "DIO")
+      (package "DIOM7959X265N")
+      (description "Diode_Schottky_40_V_3A_Surface_Mount_SMC_(DO-214AB)")
+      (attribute "PKG_TYPE" "DIOM7959X265N")
+      (attribute "MF" "onsemi")
+      (attribute "SNAPEDA_PACKAGE_ID" "36301")
+      (attribute "PACKAGE" "SMC-2_ON_Semiconductor")
+      (attribute "PRICE" "None")
+      (attribute "CHECK_PRICES" "https://www.snapeda.com/parts/SS34/Onsemi/view-part/?ref=eda")
+      (attribute "STANDARD" "IPC-7351B")
+      (attribute "PARTREV" "31_Aug_2016")
+      (attribute "SNAPEDA_LINK" "https://www.snapeda.com/parts/SS34/Onsemi/view-part/?ref=snap")
+      (attribute "MP" "SS34")
+      (attribute "PURCHASE-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=6593245&manufacturer=onsemi&part_name")
+      (attribute "MANUFACTURER" "On_Semiconductor")
+      (attribute "AVAILABILITY" "In_Stock")
+      (attribute "MAXIMUM_PACKAGE_HEIGHT" "2.65mm")
+      (gate
+        (swap 1)
+        (symbol "SS34")
+        (pin "A" A (type PS))
+        (pin "K" C (type PS))
+      )
+    )
+    (symbol "SS34"
+      (units THOU)
+      (graphic
+        (stroke 10.0)
+        (path (pt -50.0 -50.0) (pt 50.0 0.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt 50.0 0.0) (pt -50.0 50.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt 75.0 50.0) (pt 50.0 50.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt 50.0 50.0) (pt 50.0 0.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt -50.0 50.0) (pt -50.0 0.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt -50.0 0.0) (pt -50.0 -50.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt 50.0 0.0) (pt 50.0 -50.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt 75.0 50.0) (pt 75.0 40.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt 50.0 -50.0) (pt 25.0 -50.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt 25.0 -40.0) (pt 25.0 -50.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt -100.0 0.0) (pt -50.0 0.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt 100.0 0.0) (pt 50.0 0.0))
+      )
+      (terminal
+        (body (symbol "PIN_R0_U_L100") (pt -200.0 0.0) (rot 0) (mir 0) (visible true))
+        (name (pt 139.37 0.0) (rot 0) (just MIDDLE LEFT) (visible false))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R180_U_L100") (pt 200.0 0.0) (rot 0) (mir 0) (visible true))
+        (name (pt -139.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible false))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+      )
+    )
+    (symbol "PIN_R0_U_L100"
+      (units THOU)
+      (graphic
+        (stroke 6.5)
+        (path (pt 0.0 0.0) (pt 100.0 0.0))
+      )
+    )
+    (symbol "PIN_R180_U_L100"
+      (units THOU)
+      (graphic
+        (stroke 6.5)
+        (path (pt 0.0 0.0) (pt -100.0 0.0))
+      )
+    )
+    (package "DIOM7959X265N"
+      (units THOU)
+      (layer TSLK
+        (graphic
+          (stroke 5.0)
+          (path (pt -135.33 116.14) (pt -135.33 75.2))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 135.33 75.2) (pt 135.33 116.14))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 135.33 116.14) (pt -135.33 116.14))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 135.33 -116.14) (pt 135.33 -75.2))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -135.33 -75.2) (pt -135.33 -116.14))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -135.33 -116.14) (pt 135.33 -116.14))
+        )
+        (graphic
+          (stroke 7.87)
+          (circle (pt -208.66 0) (pt -200.79 0))
+        )
+      )
+      (layer TASM
+        (graphic
+          (stroke 5.0)
+          (path (pt -135.33 -116.14) (pt 135.33 -116.14))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -135.33 116.14) (pt -135.33 -116.14))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 135.33 -116.14) (pt 135.33 116.14))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 135.33 116.14) (pt -135.33 116.14))
+        )
+        (graphic
+          (stroke 7.87)
+          (circle (pt -208.66 0) (pt -200.79 0))
+        )
+      )
+      (layer OCCA
+        (graphic
+          (stroke 1.97)
+          (path (pt -190.16 125.98) (pt -190.16 -125.98))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt -190.16 -125.98) (pt 190.16 -125.98))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt 190.16 -125.98) (pt 190.16 125.98))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt 190.16 125.98) (pt -190.16 125.98))
+        )
+      )
+      (leg A (pt 136.02 0) (padstack 1))
+      (leg C (pt -136.02 0) (padstack 2))
+      (padstack 1
+        (pad (layer TCOP) (rectf 88.58 125.2 0 0.0 90.0))
+        (pad (layer TRES) (rectf 88.58 125.2 0 0.0 90.0))
+        (pad (layer TPST) (rectf 88.58 125.2 0 0.0 90.0))
+      )
+      (padstack 2
+        (pad (layer TCOP) (rectf 88.58 125.2 0 0.0 90.0))
+        (pad (layer TRES) (rectf 88.58 125.2 0 0.0 90.0))
+        (pad (layer TPST) (rectf 88.58 125.2 0 0.0 90.0))
+      )
+      (model SS34.step
+        (euler 0 0 0)
+        (offset 0 0 0)
+      )
+    )
+  )
+)

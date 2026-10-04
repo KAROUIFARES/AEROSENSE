@@ -1,0 +1,253 @@
+;Proteus Design Interchange Format
+
+(PDIF
+  (vendor "Labcenter Electronics")
+  (version 1 0)
+  (library
+    (part "1042"
+      (family "ANA")
+      (package "BAT_1042")
+      (description "SMT_Holder_for_18650_Battery")
+      (attribute "PKG_TYPE" "BAT_1042")
+      (attribute "MF" "Keystone_Electronics_Corp.")
+      (attribute "MAXIMUM_PACKAGE_HEIGHT" "15.11mm")
+      (attribute "PACKAGE" "NON_STANDARD-5_Keystone")
+      (attribute "PRICE" "None")
+      (attribute "CHECK_PRICES" "https://www.snapeda.com/parts/1042/Keystone/view-part/?ref=eda")
+      (attribute "STANDARD" "Manufacturer_Recommendations")
+      (attribute "PARTREV" "E")
+      (attribute "SNAPEDA_LINK" "https://www.snapeda.com/parts/1042/Keystone/view-part/?ref=snap")
+      (attribute "MP" "1042")
+      (attribute "PURCHASE-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=5138169&manufacturer=Keystone_Electro")
+      (attribute "SNAPEDA_PN" "1042")
+      (attribute "AVAILABILITY" "In_Stock")
+      (attribute "MANUFACTURER" "Keystone")
+      (gate
+        (swap 1)
+        (symbol "1042")
+        (pin "NEG" N (type PS))
+        (pin "POS" P (type PS))
+      )
+    )
+    (symbol "1042"
+      (units THOU)
+      (graphic
+        (stroke 10.0)
+        (path (pt -50.0 100.0) (pt -50.0 0.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt -50.0 0.0) (pt -50.0 -100.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt 50.0 50.0) (pt 50.0 0.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt 50.0 0.0) (pt 50.0 -50.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt -50.0 0.0) (pt -100.0 0.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt 50.0 0.0) (pt 100.0 0.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt -125.0 100.0) (pt -125.0 50.0))
+      )
+      (graphic
+        (stroke 10.0)
+        (path (pt -150.0 75.0) (pt -100.0 75.0))
+      )
+      (terminal
+        (body (symbol "PIN_R180_U_L200") (pt 300.0 0.0) (rot 0) (mir 0) (visible true))
+        (name (pt -239.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible false))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R0_U_L200") (pt -300.0 0.0) (rot 0) (mir 0) (visible true))
+        (name (pt 239.37 0.0) (rot 0) (just MIDDLE LEFT) (visible false))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+      )
+    )
+    (symbol "PIN_R180_U_L200"
+      (units THOU)
+      (graphic
+        (stroke 6.5)
+        (path (pt 0.0 0.0) (pt -200.0 0.0))
+      )
+    )
+    (symbol "PIN_R0_U_L200"
+      (units THOU)
+      (graphic
+        (stroke 6.5)
+        (path (pt 0.0 0.0) (pt 200.0 0.0))
+      )
+    )
+    (package "BAT_1042"
+      (units THOU)
+      (layer TSLK
+        (graphic
+          (stroke 5.0)
+          (path (pt -1516.73 -406.5) (pt -1516.73 -139.76))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -1516.73 139.76) (pt -1516.73 406.5))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 1516.73 -139.76) (pt 1516.73 -406.5))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 1516.73 406.5) (pt 1516.73 139.76))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -1516.73 406.5) (pt 1516.73 406.5))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 1516.73 -406.5) (pt -1516.73 -406.5))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -1702.76 -157.48) (pt -1663.39 -157.48))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 1663.39 -177.17) (pt 1702.76 -177.17))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 1683.07 -157.48) (pt 1683.07 -196.85))
+        )
+      )
+      (layer TASM
+        (graphic
+          (stroke 5.0)
+          (path (pt -1516.73 406.5) (pt 1516.73 406.5))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 1516.73 406.5) (pt 1516.73 -406.5))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 1516.73 -406.5) (pt -1516.73 -406.5))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -1516.73 -406.5) (pt -1516.73 406.5))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -1702.76 -157.48) (pt -1663.39 -157.48))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 1663.39 -177.17) (pt 1702.76 -177.17))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 1683.07 -157.48) (pt 1683.07 -196.85))
+        )
+      )
+      (layer OCCA
+        (graphic
+          (stroke 1.97)
+          (path (pt -1526.57 416.34) (pt 1526.57 416.34))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt 1526.57 416.34) (pt 1526.57 137.2))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt 1526.57 137.2) (pt 1718.5 137.2))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt 1718.5 137.2) (pt 1718.5 -137.2))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt 1718.5 -137.2) (pt 1526.57 -137.2))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt 1526.57 -137.2) (pt 1526.57 -416.34))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt 1526.57 -416.34) (pt -1526.57 -416.34))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt -1526.57 -416.34) (pt -1526.57 -137.2))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt -1526.57 -137.2) (pt -1718.5 -137.2))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt -1718.5 -137.2) (pt -1718.5 137.2))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt -1718.5 137.2) (pt -1526.57 137.2))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt -1526.57 137.2) (pt -1526.57 416.34))
+        )
+      )
+      (leg N (pt -1561.81 0) (padstack 1))
+      (leg P (pt 1561.81 0) (padstack 2))
+      (leg DRILL1 (pt 1086.61 314.96) (padstack 3))
+      (leg DRILL2 (pt -1086.61 -314.96) (padstack 4))
+      (leg DRILL3 (pt 1410.24 -314.96) (padstack 5))
+      (padstack 1
+        (pad (layer TCOP) (rectf 254.72 293.7 0 0.0 0))
+        (pad (layer TRES) (rectf 254.72 293.7 0 0.0 0))
+        (pad (layer TPST) (rectf 254.72 293.7 0 0.0 0))
+      )
+      (padstack 2
+        (pad (layer TCOP) (rectf 254.72 293.7 0 0.0 0))
+        (pad (layer TRES) (rectf 254.72 293.7 0 0.0 0))
+        (pad (layer TPST) (rectf 254.72 293.7 0 0.0 0))
+      )
+      (padstack 3
+        (hole 135)
+        (plated false)
+        (pad (layer TCOP) (round 0))
+        (pad (layer INNER) (round 0))
+        (pad (layer BCOP) (round 0))
+      )
+      (padstack 4
+        (hole 135)
+        (plated false)
+        (pad (layer TCOP) (round 0))
+        (pad (layer INNER) (round 0))
+        (pad (layer BCOP) (round 0))
+      )
+      (padstack 5
+        (hole 94)
+        (plated false)
+        (pad (layer TCOP) (round 0))
+        (pad (layer INNER) (round 0))
+        (pad (layer BCOP) (round 0))
+      )
+      (model 1042.step
+        (euler 0 0 0)
+        (offset 0 0 0)
+      )
+    )
+  )
+)

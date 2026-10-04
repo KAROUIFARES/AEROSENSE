@@ -1,0 +1,223 @@
+;Proteus Design Interchange Format
+
+(PDIF
+  (vendor "Labcenter Electronics")
+  (version 1 0)
+  (library
+    (part "TP4056"
+      (family "ANA")
+      (package "SOP127P600X1759N")
+      (description "Complete_single_cell_Li-Ion_battery_with_a_constant_current_/_constant_voltage_linear_charger")
+      (attribute "PKG_TYPE" "SOP127P600X1759N")
+      (attribute "MF" "NanJing_Top_Power_ASIC_Corp.")
+      (attribute "MAXIMUM_PACKAGE_HEIGHT" "1.75mm")
+      (attribute "PACKAGE" "Package")
+      (attribute "PRICE" "None")
+      (attribute "CHECK_PRICES" "https://www.snapeda.com/parts/TP4056/NanJing+Top+Power+ASIC+Corp./view-part/?ref=eda")
+      (attribute "STANDARD" "IPC_7351B")
+      (attribute "SNAPEDA_LINK" "https://www.snapeda.com/parts/TP4056/NanJing+Top+Power+ASIC+Corp./view-part/?ref=snap")
+      (attribute "MP" "TP4056")
+      (attribute "AVAILABILITY" "Not_in_stock")
+      (attribute "MANUFACTURER" "NanJing_Top_Power_ASIC_Corp.")
+      (gate
+        (swap 1)
+        (symbol "TP4056")
+        (pin "!CHRG" 7 (type OP))
+        (pin "!STDBY" 6 (type OP))
+        (pin "BAT" 5 (type OP))
+        (pin "CE" 8 (type IP))
+        (pin "EP" 9 (type PS))
+        (pin "GND" 3 (type PP))
+        (pin "PROG" 2 (type IO))
+        (pin "TEMP" 1 (type IP))
+        (pin "VCC" 4 (type PP))
+      )
+    )
+    (symbol "TP4056"
+      (units THOU)
+      (graphic
+        (stroke 1)
+        (path (pt -400 500) (pt 400 500) (pt 400 -500) (pt -400 -500) (pt -400 500) (closed))
+      )
+      (terminal
+        (body (symbol "PIN_R180_U_L200") (pt 600.0 0.0) (rot 0) (mir 0) (visible true))
+        (name (pt -239.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R180_U_L200") (pt 600.0 100.0) (rot 0) (mir 0) (visible true))
+        (name (pt -239.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R180_U_L200") (pt 600.0 200.0) (rot 0) (mir 0) (visible true))
+        (name (pt -239.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R0_U_L200") (pt -600.0 100.0) (rot 0) (mir 0) (visible true))
+        (name (pt 239.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R180_U_L200") (pt 600.0 -200.0) (rot 0) (mir 0) (visible true))
+        (name (pt -239.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R180_U_L200") (pt 600.0 -400.0) (rot 0) (mir 0) (visible true))
+        (name (pt -239.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R0_U_L200") (pt -600.0 -100.0) (rot 0) (mir 0) (visible true))
+        (name (pt 239.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R0_U_L200") (pt -600.0 200.0) (rot 0) (mir 0) (visible true))
+        (name (pt 239.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE LEFT) (visible true))
+      )
+      (terminal
+        (body (symbol "PIN_R180_U_L200") (pt 600.0 400.0) (rot 0) (mir 0) (visible true))
+        (name (pt -239.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+        (number (pt -39.37 0.0) (rot 0) (just MIDDLE RIGHT) (visible true))
+      )
+    )
+    (symbol "PIN_R180_U_L200"
+      (units THOU)
+      (graphic
+        (stroke 6.5)
+        (path (pt 0.0 0.0) (pt -200.0 0.0))
+      )
+    )
+    (symbol "PIN_R0_U_L200"
+      (units THOU)
+      (graphic
+        (stroke 6.5)
+        (path (pt 0.0 0.0) (pt 200.0 0.0))
+      )
+    )
+    (package "SOP127P600X1759N"
+      (units THOU)
+      (layer TSLK
+        (graphic
+          (stroke 7.87)
+          (circle (pt -178.94 98.62) (pt -171.06 98.62))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -78.74 100.39) (pt 78.74 100.39))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -78.74 -100.39) (pt 78.74 -100.39))
+        )
+      )
+      (layer TPST
+        (graphic
+          (stroke 1)
+          (path (pt -25.39 32.28) (pt 25.39 32.28) (pt 25.39 -32.28) (pt -25.39 -32.28) (pt -25.39 32.28) (closed))
+        )
+      )
+      (layer OCCA
+        (graphic
+          (stroke 1.97)
+          (path (pt -146.06 110.24) (pt 146.06 110.24))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt -146.06 -110.24) (pt 146.06 -110.24))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt -146.06 110.24) (pt -146.06 -110.24))
+        )
+        (graphic
+          (stroke 1.97)
+          (path (pt 146.06 110.24) (pt 146.06 -110.24))
+        )
+      )
+      (layer TASM
+        (graphic
+          (stroke 7.87)
+          (circle (pt -178.94 98.62) (pt -171.06 98.62))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -78.74 100.39) (pt 78.74 100.39))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -78.74 -100.39) (pt 78.74 -100.39))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt -78.74 100.39) (pt -78.74 -100.39))
+        )
+        (graphic
+          (stroke 5.0)
+          (path (pt 78.74 100.39) (pt 78.74 -100.39))
+        )
+      )
+      (leg 7 (pt 97.44 25) (padstack 1))
+      (leg 6 (pt 97.44 -25) (padstack 2))
+      (leg 5 (pt 97.44 -75) (padstack 3))
+      (leg 8 (pt 97.44 75) (padstack 4))
+      (leg 9 (pt 0 0) (padstack 5))
+      (leg 3 (pt -97.44 -25) (padstack 6))
+      (leg 2 (pt -97.44 25) (padstack 7))
+      (leg 1 (pt -97.44 75) (padstack 8))
+      (leg 4 (pt -97.44 -75) (padstack 9))
+      (padstack 1
+        (pad (layer TCOP) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TRES) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TPST) (rectf 23.62 77.56 0 2.95 0))
+      )
+      (padstack 2
+        (pad (layer TCOP) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TRES) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TPST) (rectf 23.62 77.56 0 2.95 0))
+      )
+      (padstack 3
+        (pad (layer TCOP) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TRES) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TPST) (rectf 23.62 77.56 0 2.95 0))
+      )
+      (padstack 4
+        (pad (layer TCOP) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TRES) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TPST) (rectf 23.62 77.56 0 2.95 0))
+      )
+      (padstack 5
+        (pad (layer TCOP) (rectf 95.0 130.0 0 0.0 90.0))
+        (pad (layer TRES) (rectf 95.0 130.0 0 0.0 90.0))
+      )
+      (padstack 6
+        (pad (layer TCOP) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TRES) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TPST) (rectf 23.62 77.56 0 2.95 0))
+      )
+      (padstack 7
+        (pad (layer TCOP) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TRES) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TPST) (rectf 23.62 77.56 0 2.95 0))
+      )
+      (padstack 8
+        (pad (layer TCOP) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TRES) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TPST) (rectf 23.62 77.56 0 2.95 0))
+      )
+      (padstack 9
+        (pad (layer TCOP) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TRES) (rectf 23.62 77.56 0 2.95 0))
+        (pad (layer TPST) (rectf 23.62 77.56 0 2.95 0))
+      )
+      (model TP4056.step
+        (euler 0 0 0)
+        (offset 0 0 0)
+      )
+    )
+  )
+)
