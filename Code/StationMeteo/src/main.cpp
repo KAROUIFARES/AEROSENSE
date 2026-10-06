@@ -1,18 +1,26 @@
 #include <Arduino.h>
+#include <DHT.H>
+#include <LiquidCrystal.h>
+int DHTPIN = 21;
+#define DHTTYPE DHT11 // Definit le type de capteur utilise
 
-// put function declarations here:
-int myFunction(int, int);
+DHT dht(DHTPIN, DHTTYPE);
+LiquidCrystal lcd(27, 26, 25, 33, 32, 14);
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+void setup()
+{
+  lcd.begin(16, 2);
+  dht.begin();
+
+  lcd.print("AEROSENSE...");
+  delay(3000);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-}
+void loop()
+{
+  lcd.setCursor(0, 0);
+  lcd.print("Temp : " + String(dht.readTemperature()) + "°C");
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}C:\Users\Fares\Documents\PlatformIO\Projects\stationMeteo\src\main.cpp
+  lcd.setCursor(0, 1);
+  lcd.print("Hum : " + String(dht.readHumidity()) + "%");
+}
