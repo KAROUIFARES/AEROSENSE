@@ -138,6 +138,17 @@ fun MqttConfigDialog(
                     horizontalArrangement = Arrangement.spacedBy(6.dp)
                 ) {
                     FilterChip(
+                        selected = host == "h1211a42.ala.eu-central-1.emqxsl.com",
+                        onClick = {
+                            host = "h1211a42.ala.eu-central-1.emqxsl.com"
+                            port = "8883"
+                            username = "KAROUI"
+                            password = "aerosense"
+                            unifiedTopic = "aerosense/data"
+                        },
+                        label = { Text("AeroSense Cloud") }
+                    )
+                    FilterChip(
                         selected = host == "broker.hivemq.com",
                         onClick = {
                             host = "broker.hivemq.com"
@@ -152,14 +163,6 @@ fun MqttConfigDialog(
                             port = "1883"
                         },
                         label = { Text("EMQX") }
-                    )
-                    FilterChip(
-                        selected = host == "test.mosquitto.org",
-                        onClick = {
-                            host = "test.mosquitto.org"
-                            port = "1883"
-                        },
-                        label = { Text("Mosquitto") }
                     )
                 }
 
@@ -362,7 +365,8 @@ fun MqttConfigDialog(
                 // Save button
                 Button(
                     onClick = {
-                        val parsedPort = port.toIntOrNull() ?: 1883
+                        val parsedPort = port.toIntOrNull() ?: 8883
+                        val isSsl = parsedPort == 8883 || host.contains("emqxsl.com") || host.contains("hivemq.cloud")
                         val newConfig = currentConfig.copy(
                             brokerHost = host.trim(),
                             brokerPort = parsedPort,
@@ -372,7 +376,8 @@ fun MqttConfigDialog(
                             tempTopic = tempTopic.trim(),
                             humTopic = humTopic.trim(),
                             unifiedTopic = unifiedTopic.trim(),
-                            commandTopic = commandTopic.trim()
+                            commandTopic = commandTopic.trim(),
+                            useSsl = isSsl
                         )
                         val newThresholds = AlertThresholds(
                             tempMax = tempMax.toFloatOrNull() ?: 30f,

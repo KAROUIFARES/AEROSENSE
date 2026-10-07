@@ -4,16 +4,16 @@ import kotlin.math.ln
 import kotlin.math.roundToInt
 
 data class MqttConfig(
-    val brokerHost: String = "broker.hivemq.com",
-    val brokerPort: Int = 1883,
-    val clientId: String = "AeroSense_App_" + (System.currentTimeMillis() % 10000),
-    val username: String = "",
-    val password: String = "",
-    val tempTopic: String = "aerosense/station/temperature",
-    val humTopic: String = "aerosense/station/humidity",
-    val unifiedTopic: String = "aerosense/station/data",
-    val commandTopic: String = "aerosense/station/commands",
-    val useSsl: Boolean = false
+    val brokerHost: String = "h1211a42.ala.eu-central-1.emqxsl.com",
+    val brokerPort: Int = 8883,
+    val clientId: String = "AeroSense_Android_" + java.util.UUID.randomUUID().toString().take(8),
+    val username: String = "KAROUI",
+    val password: String = "aerosense",
+    val tempTopic: String = "aerosense/temperature",
+    val humTopic: String = "aerosense/humidity",
+    val unifiedTopic: String = "aerosense/data",
+    val commandTopic: String = "aerosense/commands",
+    val useSsl: Boolean = true
 ) {
     val serverUri: String
         get() {

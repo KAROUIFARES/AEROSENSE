@@ -17,12 +17,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.aerosense_androidapp_dashboard.ui.components.AlertsBanner
-import com.example.aerosense_androidapp_dashboard.ui.components.ComfortIndexCard
 import com.example.aerosense_androidapp_dashboard.ui.components.MetricGaugeCard
 import com.example.aerosense_androidapp_dashboard.ui.components.MetricType
 import com.example.aerosense_androidapp_dashboard.ui.components.MqttConfigDialog
 import com.example.aerosense_androidapp_dashboard.ui.components.RealtimeChartCard
-import com.example.aerosense_androidapp_dashboard.ui.components.StationControlCard
 import com.example.aerosense_androidapp_dashboard.ui.components.TopAppBarAeroSense
 import com.example.aerosense_androidapp_dashboard.ui.viewmodel.AeroSenseViewModel
 
@@ -83,25 +81,11 @@ fun DashboardScreen(
                 }
             }
 
-            // Comfort Index & Dew Point
-            item {
-                ComfortIndexCard(data = state.stationData)
-            }
-
             // Realtime Evolution Chart
             item {
                 RealtimeChartCard(
                     history = state.history,
                     onClearHistory = { viewModel.clearHistory() }
-                )
-            }
-
-            // Telemetry & ESP32 Remote Control
-            item {
-                StationControlCard(
-                    totalPackets = state.totalPackets,
-                    lastReceivedTime = state.lastReceivedTime,
-                    onSendCommand = { cmd -> viewModel.sendCommand(cmd) }
                 )
             }
 

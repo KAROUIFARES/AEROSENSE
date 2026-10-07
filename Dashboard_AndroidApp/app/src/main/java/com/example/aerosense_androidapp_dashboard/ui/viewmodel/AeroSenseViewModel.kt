@@ -172,15 +172,31 @@ class AeroSenseViewModel(
                     }
                 }
                 config.unifiedTopic -> {
-                    // JSON format: {"temperature": 23.5, "humidity": 60}
+                    // JSON format: {"temp": 23.5, "hum": 60} ou {"temperature": 23.5, "humidity": 60}
                     val json = JSONObject(trimmed)
-                    val temp = if (json.has("temperature")) json.getDouble("temperature").toFloat()
-                    else if (json.has("temp")) json.getDouble("temp").toFloat()
-                    else null
+                    val temp = when {
+                        json.has("temp") && !json.isNull("temp") -> {
+                            val v = json.optDouble("temp", Double.NaN)
+                            if (v.isNaN()) null else v.toFloat()
+                        }
+                        json.has("temperature") && !json.isNull("temperature") -> {
+                            val v = json.optDouble("temperature", Double.NaN)
+                            if (v.isNaN()) null else v.toFloat()
+                        }
+                        else -> null
+                    }
 
-                    val hum = if (json.has("humidity")) json.getDouble("humidity").toFloat()
-                    else if (json.has("hum")) json.getDouble("hum").toFloat()
-                    else null
+                    val hum = when {
+                        json.has("hum") && !json.isNull("hum") -> {
+                            val v = json.optDouble("hum", Double.NaN)
+                            if (v.isNaN()) null else v.toFloat()
+                        }
+                        json.has("humidity") && !json.isNull("humidity") -> {
+                            val v = json.optDouble("humidity", Double.NaN)
+                            if (v.isNaN()) null else v.toFloat()
+                        }
+                        else -> null
+                    }
 
                     if (temp != null || hum != null) {
                         onNewSensorReading(
@@ -193,14 +209,34 @@ class AeroSenseViewModel(
                     // Try parsing as JSON even if topic doesn't match exactly
                     if (trimmed.startsWith("{") && trimmed.endsWith("}")) {
                         val json = JSONObject(trimmed)
-                        val t = if (json.has("temperature")) json.getDouble("temperature").toFloat()
-                        else if (json.has("temp")) json.getDouble("temp").toFloat() else null
-                        val h = if (json.has("humidity")) json.getDouble("humidity").toFloat()
-                        else if (json.has("hum")) json.getDouble("hum").toFloat() else null
-                        if (t != null || h != null) {
+                        val temp = when {
+                            json.has("temp") && !json.isNull("temp") -> {
+                                val v = json.optDouble("temp", Double.NaN)
+                                if (v.isNaN()) null else v.toFloat()
+                            }
+                            json.has("temperature") && !json.isNull("temperature") -> {
+                                val v = json.optDouble("temperature", Double.NaN)
+                                if (v.isNaN()) null else v.toFloat()
+                            }
+                            else -> null
+                        }
+
+                        val hum = when {
+                            json.has("hum") && !json.isNull("hum") -> {
+                                val v = json.optDouble("hum", Double.NaN)
+                                if (v.isNaN()) null else v.toFloat()
+                            }
+                            json.has("humidity") && !json.isNull("humidity") -> {
+                                val v = json.optDouble("humidity", Double.NaN)
+                                if (v.isNaN()) null else v.toFloat()
+                            }
+                            else -> null
+                        }
+
+                        if (temp != null || hum != null) {
                             onNewSensorReading(
-                                t ?: _uiState.value.stationData.temperature,
-                                h ?: _uiState.value.stationData.humidity
+                                temp ?: _uiState.value.stationData.temperature,
+                                hum ?: _uiState.value.stationData.humidity
                             )
                         }
                     }

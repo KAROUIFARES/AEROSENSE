@@ -18,6 +18,7 @@ import org.eclipse.paho.client.mqttv3.MqttCallbackExtended
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions
 import org.eclipse.paho.client.mqttv3.MqttMessage
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence
+import java.util.UUID
 
 class MqttManager(
     private val scope: CoroutineScope = CoroutineScope(Dispatchers.IO)
@@ -46,23 +47,32 @@ class MqttManager(
                 _connectionState.value = ConnectionStatus.CONNECTING
                 _statusMessage.value = "Connexion à ${config.brokerHost}..."
 
+                // Évite tout conflit de ClientId avec l'ESP32
+                val resolvedClientId = if (config.clientId == "ESP32_AeroSense" || config.clientId.isBlank()) {
+                    "AeroSense_Android_" + UUID.randomUUID().toString().take(8)
+                } else {
+                    config.clientId
+                }
+
+                Log.d(TAG, "Connecting to: ${config.serverUri} with clientId: $resolvedClientId")
+
                 val newClient = MqttAsyncClient(
                     config.serverUri,
-                    config.clientId,
+                    resolvedClientId,
                     MemoryPersistence()
                 )
                 client = newClient
 
                 newClient.setCallback(object : MqttCallbackExtended {
                     override fun connectComplete(reconnect: Boolean, serverURI: String?) {
-                        Log.d(TAG, "Connect complete. Reconnect: $reconnect")
+                        Log.d(TAG, "Connexion établie (reconnect: $reconnect)")
                         _connectionState.value = ConnectionStatus.CONNECTED
-                        _statusMessage.value = if (reconnect) "Reconnecté au broker" else "Connecté au broker"
+                        _statusMessage.value = if (reconnect) "Reconnecté au broker" else "Connecté à ${config.brokerHost}"
                         subscribeToTopics(listOf(config.tempTopic, config.humTopic, config.unifiedTopic))
                     }
 
                     override fun connectionLost(cause: Throwable?) {
-                        Log.w(TAG, "Connection lost: ${cause?.message}")
+                        Log.w(TAG, "Connexion perdue : ${cause?.message}", cause)
                         _connectionState.value = ConnectionStatus.DISCONNECTED
                         _statusMessage.value = "Connexion perdue : ${cause?.localizedMessage ?: "Inconnue"}"
                     }
@@ -85,8 +95,9 @@ class MqttManager(
                 val options = MqttConnectOptions().apply {
                     isAutomaticReconnect = true
                     isCleanSession = true
-                    connectionTimeout = 10
-                    keepAliveInterval = 20
+                    connectionTimeout = 20
+                    keepAliveInterval = 60
+                    maxInflight = 100
                     if (config.username.isNotBlank()) {
                         userName = config.username
                     }
@@ -97,14 +108,13 @@ class MqttManager(
 
                 newClient.connect(options, null, object : IMqttActionListener {
                     override fun onSuccess(asyncActionToken: IMqttToken?) {
-                        Log.d(TAG, "Mqtt connected successfully")
+                        Log.d(TAG, "Mqtt connect action onSuccess")
                         _connectionState.value = ConnectionStatus.CONNECTED
                         _statusMessage.value = "Connecté à ${config.brokerHost}"
-                        subscribeToTopics(listOf(config.tempTopic, config.humTopic, config.unifiedTopic))
                     }
 
                     override fun onFailure(asyncActionToken: IMqttToken?, exception: Throwable?) {
-                        Log.e(TAG, "Mqtt connection failed: ${exception?.message}")
+                        Log.e(TAG, "Mqtt connection failed: ${exception?.message}", exception)
                         _connectionState.value = ConnectionStatus.ERROR
                         _statusMessage.value = "Échec : ${exception?.localizedMessage ?: "Erreur de connexion"}"
                     }
@@ -122,20 +132,20 @@ class MqttManager(
         val current = client ?: return
         if (!current.isConnected) return
 
-        try {
-            topics.forEach { topic ->
-                if (topic.isNotBlank()) {
-                    current.subscribe(topic, 0, null, object : IMqttActionListener {
-                        override fun onSuccess(asyncActionToken: IMqttToken?) {
-                            Log.d(TAG, "Souscrit au topic : $topic")
-                        }
+        val validTopics = topics.filter { it.isNotBlank() }.distinct()
+        if (validTopics.isEmpty()) return
 
-                        override fun onFailure(asyncActionToken: IMqttToken?, exception: Throwable?) {
-                            Log.w(TAG, "Échec souscription : $topic (${exception?.message})")
-                        }
-                    })
+        val qos = IntArray(validTopics.size) { 0 }
+        try {
+            current.subscribe(validTopics.toTypedArray(), qos, null, object : IMqttActionListener {
+                override fun onSuccess(asyncActionToken: IMqttToken?) {
+                    Log.d(TAG, "Souscription réussie aux topics: $validTopics")
                 }
-            }
+
+                override fun onFailure(asyncActionToken: IMqttToken?, exception: Throwable?) {
+                    Log.w(TAG, "Échec souscription topics: ${exception?.message}")
+                }
+            })
         } catch (e: Exception) {
             Log.e(TAG, "Erreur lors de la souscription aux topics", e)
         }
